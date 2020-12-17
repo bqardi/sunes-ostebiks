@@ -4,13 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sunes Ostebiks</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./images/logo.svg" type="image/svg+xml">
 </head>
 
 <body>
+    <header class="header">
+        <h1 class="header__title">Sunes Ostebiks</h1>
+    </header>
+    <main class="main">
+        <section class="main__scrollable">
+            <nav class="navigation">
+                <a href="#" class="navigation__chevron js-nav-left" aria-label="Forrige oste">
+                    <svg viewBox="0 0 24 24"><path d="M22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12M15.4,16.6L10.8,12L15.4,7.4L14,6L8,12L14,18L15.4,16.6Z"></path></svg>
+                </a>
+            </nav>
+            <section class="cheeses">
     
-    <script src="script.js"></script>
+            </section>
+            <nav class="navigation">
+                <a href="#" class="navigation__chevron js-nav-right" aria-label="Næste oste">
+                    <svg viewBox="0 0 24 24"><path d="M22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12M10,18L16,12L10,6L8.6,7.4L13.2,12L8.6,16.6L10,18Z"></path></svg>
+                </a>
+            </nav>
+        </section>
+    </main>
+    <footer class="footer">
+        <small class="footer__madeby">
+            Sune, 2020
+        </small>
+    </footer>
+    <script src="./script.js"></script>
 </body>
 
 </html>

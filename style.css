@@ -1,4 +1,146 @@
-body {
+* {
     margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --header-height: 120px;
+    --footer-height: 50px;
+}
+
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+}
+
+.header{
+    top: 0;
+    height: var(--header-height);
+    text-align: center;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.header,
+.footer{
+    padding: 1em;
+    background-color: white;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.footer{
+    height: var(--footer-height);
+    bottom: 0;
+    border-top: 1px solid #e4e4e4;
+}
+
+.main{
+    overflow-y: auto;
+    height: calc(100% - var(--header-height) - var(--footer-height));
+}
+
+.main__scrollable{
+    display: grid;
+    grid-template-columns: 96px 1fr 96px;
+    align-items: center;
+    max-width: 1148px;
+    margin: 3em auto;
+}
+
+.navigation{    
+    justify-self: center;
+}
+.navigation__chevron{
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+.navigation__chevron svg{
+    width: 100%;
+    height: 100%;
+    fill: rgba(121, 89, 28, 0.13);
+    cursor: pointer;
+    transition: fill .3s;
+}
+.main:hover .navigation__chevron svg{
+    fill: rgb(121, 88, 28);
+}
+.main:hover .navigation__chevron:hover svg{
+    fill: orange;
+}
+
+.cheeses{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.cheeses__item{
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.cheeses__item:hover{
+    border: 1px solid orange;
+}
+.cheeses__title{
+    padding: 1em;
+}
+.cheeses__weight{
+    padding: 1em 1em 0;
+}
+.cheeses__price{
+    position: absolute;
+    top: 20px;
+    right: -15px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: orange;
+    padding: 0.5em 1em;
+    transform: rotate(10deg) scale(0.7);
+    transition: transform .2s, top .2s, right .2s;
+}
+.cheeses__item:hover .cheeses__price{
+    top: 10%;
+    right: 10%;
+    transform: rotate(0) scale(1.3);
+    transition-delay: .2s;
+}
+
+.cheeses__container{
+    width: 100%;
+    overflow: hidden;
+}
+.cheeses__img{
+    position: relative;
+    z-index: -1;
+    max-width: 100%;
+    transition: transform .2s;
+}
+.cheeses__item:hover .cheeses__img{
+    transform: scale(1.5);
+}
+
+.cheeses__strength{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em 1em;
+}
+
+.cheeses__strengthBar{
+    transform-origin: 100% 100%;
+    transition: transform .2s;
+}
+.cheeses__item:hover .cheeses__strengthBar{
+    transform: scale(1.8);
+    transition-delay: .4s;
+}
+.cheeses__strengthBar svg{
+    width: 24px;
+    height: 24px;
+    fill: rgb(207, 14, 14);
 }
