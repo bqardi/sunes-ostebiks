@@ -6,7 +6,7 @@ var navRight = document.querySelector(".js-nav-right");
 
 var paramObj = setParamObj(0, url.get("page"));
 
-getData(`https://bqardi-osteapi.herokuapp.com/api/v1/cheeses${paramObj.paramStr}`, displayCheeses);
+getData(`https://express.bqardi.dk/api/v1/cheeses${paramObj.paramStr}`, displayCheeses);
 
 function getData(url, callback){
     fetch(url)
@@ -74,7 +74,7 @@ function createImg(data){
     imgContainer.className = "cheeses__container";    
     var img = document.createElement("img");
     img.className = "cheeses__img";
-    img.src = "./images/" + data.fileFriendly + ".jpg";
+    img.src = "https://express.bqardi.dk/api/v1/cheeses/image/" + data.img;
     img.alt = data.name;
     img.title = data.name;
     imgContainer.appendChild(img);
