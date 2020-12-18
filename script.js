@@ -74,7 +74,7 @@ function createImg(data){
     imgContainer.className = "cheeses__container";    
     var img = document.createElement("img");
     img.className = "cheeses__img";
-    img.src = "https://express.bqardi.dk/api/v1/cheeses/image/" + data.img;
+    img.src = data.img;
     img.alt = data.name;
     img.title = data.name;
     imgContainer.appendChild(img);
